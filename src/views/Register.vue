@@ -72,7 +72,14 @@
         methods:{
             submitHandler(e){
                 e.preventDefault();//阻止冒泡
-                console.log('我去注册了');
+
+                this.$http.get('/api/register',{params:this.model}).then((response) => {
+                    console.log(response.data)
+                })
+
+
+
+
             }
         }
     }
