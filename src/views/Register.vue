@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <img class="imgheader" src="http://api.noahzhou.com//uploads/resource/20190125/1548423378.jpeg" alt="">
         <cube-form
                 :model="model"
                 :schema="schema"
@@ -72,19 +72,20 @@
         methods:{
             submitHandler(e){
                 e.preventDefault();//阻止冒泡
-
                 this.$http.get('/api/register',{params:this.model}).then((response) => {
-                    console.log(response.data)
+                    console.log(response)
+                }).catch(err=>{
+                    console.error(err)
                 })
-
-
-
-
             }
         }
     }
 </script>
 
 <style scoped>
+    .imgheader{
+        width: 100%;
+        height: 100px;
+    }
 
 </style>
